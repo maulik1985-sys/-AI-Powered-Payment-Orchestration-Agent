@@ -1,0 +1,102 @@
+# Contributing to AI Payment Orchestration Agent
+
+Thank you for your interest in contributing to this project! This n8n workflow demonstrates AI-powered payment orchestration across multiple providers.
+
+## 🧪 How to Test This Workflow
+
+### Prerequisites
+- n8n instance (cloud or self-hosted)
+- OpenAI API key
+- Stripe test account
+- Razorpay account (for UPI testing)
+- Open Banking API credentials (optional)
+
+### Setup Steps
+1. **Import the Workflow**
+   - Download `ai-payment-agent-workflow.json`
+   - In n8n, go to Workflows → Import from File
+   - Select the downloaded JSON file
+
+2. **Configure Credentials**
+   - OpenAI: Add your API key in the OpenAI Model node
+   - Stripe: Update the Authorization header in "Create Stripe Payment Intent" node
+   - Razorpay: Update the MCP server URL in "UPI Payment (Razorpay)" node
+   - Open Banking: Configure OAuth credentials if using Finicity/Plaid
+
+3. **Set Up Webhooks**
+   - Activate the workflow in n8n
+   - Copy webhook URLs from:
+     - `Webhook Trigger` node → for chatbot integration
+     - `Stripe Payment Confirmation` → for Stripe webhooks
+     - `Razorpay UPI Confirmation` → for Razorpay webhooks
+   - Configure these URLs in your payment provider dashboards
+
+4. **Test the Workflow**
+   - Use the example requests in `examples/test-requests.md`
+   - Send POST requests to the webhook URL
+   - Monitor execution in n8n's workflow view
+
+## 🐛 Reporting Issues
+
+When reporting bugs, please include:
+- **n8n version** (e.g., 1.20.0)
+- **Node that failed** (e.g., "Intent Parser", "Create Stripe Payment Intent")
+- **Error message** (full error from n8n execution log)
+- **Request payload** (sanitize any sensitive data)
+- **Expected vs actual behavior**
+
+### Example Issue Report
+n8n Version: 1.20.0
+Node: Create Stripe Payment Intent
+Error: "Request failed with status code 401"
+Payload: {"message": "pay $50 to John"}
+Expected: Payment intent created
+Actual: Authentication error
+
+
+## 💡 Suggesting Enhancements
+
+We welcome suggestions for:
+- Additional payment providers (PayPal, Square, etc.)
+- Enhanced AI intent parsing
+- Multi-currency support
+- Fraud detection integration
+- Better error handling
+
+Please open an issue with:
+- Clear description of the enhancement
+- Use case/business value
+- Proposed implementation (if applicable)
+
+## 🔧 Code Style
+
+This is a workflow configuration project, not a code repository. When suggesting changes:
+- Explain the workflow logic clearly
+- Provide before/after screenshots if modifying node structure
+- Test thoroughly before submitting
+
+## 📝 Documentation
+
+If you improve the README or add documentation:
+- Keep language clear and beginner-friendly
+- Include screenshots for complex setups
+- Update the architecture diagram if workflow structure changes
+
+## 🤝 Pull Request Process
+
+1. Fork the repository
+2. Make your changes to the workflow JSON
+3. Test the modified workflow in your n8n instance
+4. Update README.md if you've changed functionality
+5. Submit a pull request with:
+   - Clear description of changes
+   - Screenshots of the updated workflow
+   - Test results
+
+## 📧 Questions?
+
+Open an issue with the "question" label, and I'll respond as soon as possible.
+
+---
+
+**Note:** This project is maintained as a portfolio piece. Response times may vary, but all contributions are appreciated!
