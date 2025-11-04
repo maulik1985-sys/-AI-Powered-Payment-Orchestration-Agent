@@ -1,5 +1,5 @@
 # -AI-Powered-Payment-Orchestration-Agent
-An intelligent payment routing system that uses AI to understand natural language payment requests and automatically routes them to the optimal payment provider (Stripe, UPI, or Open Banking).
+An intelligent payment routing system that uses AI to understand natural language payment requests and automatically routes them to the optimal payment provider (Stripe, UPI, or Open Banking & Circle ).
 ## 📋 Table of Contents
 
 - [Problem Statement](#-problem-statement)
@@ -20,7 +20,7 @@ An intelligent payment routing system that uses AI to understand natural languag
 
 Modern e-commerce platforms face several payment integration challenges:
 
-- **Multiple Payment Providers**: Merchants need to integrate Stripe (cards), Razorpay (UPI), and Open Banking separately
+- **Multiple Payment Providers**: Merchants need to integrate Stripe (cards), Razorpay (UPI),Circle and Open Banking separately
 - **Complex User Experience**: Customers must manually select payment methods
 - **Fragmented Codebase**: Each payment provider requires different API implementations
 - **Webhook Management**: Handling async payment confirmations across providers is error-prone
